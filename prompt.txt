@@ -1,0 +1,5 @@
+eu quero a imagem full screen como fundo do site na entrada, mas pra isso preciso deixar ela em resolução mais larga
+
+descendo quero o fundo black ao inves desse laranja, mantendo os efeitos e as texturizações, pois ficou legalm e toque esse laranja por vermelho
+
+segue a imagem atualizada esticada em /public/banner.png

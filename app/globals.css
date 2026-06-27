@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-900 text-zinc-200 antialiased;
+  background-image: radial-gradient(
+       circle at 15% -10%,
+      rgba(224, 36, 28, 0.12),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 8%, rgba(255, 122, 24, 0.1), transparent 45%);
+  overflow-x: hidden;
+}
+
+/* Custom selection */
+::selection {
+  background: rgba(224, 36, 28, 0.4);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0807;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#b3140d, #7d0f0a);
+  border-radius: 8px;
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.01] backdrop-blur-xl;
+  }
+
+  .text-gradient-fire {
+    @apply bg-gradient-to-b from-gold-300 via-ember-500 to-war-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-ash {
+    @apply bg-gradient-to-b from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent;
+  }
+
+  .btn-war {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl px-7 py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-all duration-300;
+    background: linear-gradient(180deg, #f25c05, #b3140d);
+    box-shadow: 0 0 0 1px rgba(255, 157, 77, 0.4),
+      0 14px 40px -12px rgba(224, 36, 28, 0.8);
+  }
+  .btn-war:hover {
+    box-shadow: 0 0 0 1px rgba(255, 157, 77, 0.7),
+      0 18px 55px -10px rgba(255, 122, 24, 0.85);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-7 py-3.5 text-sm font-bold uppercase tracking-widest text-zinc-200 backdrop-blur-md transition-all duration-300 hover:border-ember-500/60 hover:bg-white/[0.06] hover:text-white;
+  }
+}
+
+@layer utilities {
+  .label-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-war-600/40 bg-war-700/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-ember-400;
+  }
+
+  .pixel-edge {
+    clip-path: polygon(
+      0 8px,
+      8px 8px,
+      8px 0,
+      calc(100% - 8px) 0,
+      calc(100% - 8px) 8px,
+      100% 8px,
+      100% calc(100% - 8px),
+      calc(100% - 8px) calc(100% - 8px),
+      calc(100% - 8px) 100%,
+      8px 100%,
+      8px calc(100% - 8px),
+      0 calc(100% - 8px)
+    );
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent);
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+}
