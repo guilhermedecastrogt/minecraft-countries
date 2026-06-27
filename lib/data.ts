@@ -11,6 +11,8 @@ import {
   Flame,
   EyeOff,
   ShieldAlert,
+  PlugZap,
+  PackageOpen,
   type LucideIcon,
 } from "lucide-react";
 
@@ -47,8 +49,8 @@ export const mechanics: Mechanic[] = [
     icon: Target,
     title: "Objetivo Principal",
     description:
-      "Os objetivos da temporada serão divulgados em breve. Quando saírem, vence o country que completar primeiro.",
-    tag: "Em breve",
+      "Os objetivos da temporada serão divulgados no segundo dia. Quando saírem, vence o country que completar primeiro.",
+    tag: "2º dia",
   },
   {
     icon: Swords,
@@ -112,6 +114,19 @@ export const rules: Rule[] = [
     description:
       "O jogo pode ser sujo, mas não pode ter cheat. Hack, X-Ray e macro absurdo são proibidos. Caos sim, trapaça não.",
     forbidden: true,
+  },
+  {
+    icon: PlugZap,
+    title: "Combat Log = Morte",
+    description:
+      "Está em PvP e desconectou? Você morre. Cair da luta na queda da conexão não te salva — perde tudo igual.",
+    forbidden: true,
+  },
+  {
+    icon: PackageOpen,
+    title: "Apenas Cliente Vanilla",
+    description:
+      "Entre só com o cliente Vanilla (Java Edition 26.1.2). Clientes alternativos e mods de vantagem estão fora.",
   },
 ];
 

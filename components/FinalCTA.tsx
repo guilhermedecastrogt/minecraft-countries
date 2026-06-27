@@ -1,14 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Swords, Skull, Server } from "lucide-react";
+import { Skull, Server } from "lucide-react";
 import { Reveal } from "./ui/Reveal";
 import { Embers } from "./ui/Embers";
 
 const steps = [
   { n: "01", t: "Mande “TÔ NA GUERRA”", d: "Confirme no grupo que você quer entrar na temporada." },
-  { n: "02", t: "Entre no servidor", d: "O IP de conexão será divulgado em breve. Fique de olho." },
+  { n: "02", t: "Entre no servidor", d: "Use o IP mceasy-01.strt.host:25591 com o cliente Vanilla (Java Edition 26.1.2)." },
   { n: "03", t: "Forme seu country", d: "Não há times definidos. Faça alianças e monte seu time dentro do jogo." },
+];
+
+const serverNotes = [
+  "Entre apenas com o cliente VANILLA — nada de mods ou clientes alternativos.",
+  "Saiu em PvP? Desconectar no meio do combate = morte. Não tem fuga.",
+  "Comando /clan já está disponível para organizar seu country.",
+  "Comando /home ainda será adicionado.",
+  "O End está OFF no início e será liberado no futuro.",
+  "Os objetivos da temporada serão divulgados no segundo dia.",
 ];
 
 export function FinalCTA() {
@@ -51,15 +59,6 @@ export function FinalCTA() {
 
         <Reveal delay={0.24}>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <motion.a
-              href="#top"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="btn-war w-full text-base sm:w-auto"
-            >
-              <Swords className="h-5 w-5" />
-              Entrar na guerra
-            </motion.a>
             <a href="#regras" className="btn-ghost w-full sm:w-auto">
               Reler as regras
             </a>
@@ -74,13 +73,31 @@ export function FinalCTA() {
               IP do servidor
             </span>
             <div className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl border border-white/10 bg-ink-900/70 px-5 py-4 backdrop-blur-sm">
-              <span className="font-display text-xl uppercase tracking-wide text-gradient-fire sm:text-2xl">
-                Em breve
+              <span className="select-all break-all font-display text-xl uppercase tracking-wide text-gradient-fire sm:text-2xl">
+                mceasy-01.strt.host:25591
               </span>
             </div>
             <p className="mt-3 text-xs text-zinc-600">
-              Java Edition · o IP de conexão será divulgado antes da temporada começar.
+              Java Edition · versão 26.1.2 · entre apenas com o cliente Vanilla.
             </p>
+          </div>
+        </Reveal>
+
+        {/* Server notes */}
+        <Reveal delay={0.32}>
+          <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-white/10 bg-ink-900/50 p-6 text-left backdrop-blur-sm">
+            <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              <Skull className="h-3.5 w-3.5 text-war-400" />
+              Antes de entrar
+            </span>
+            <ul className="mt-4 space-y-3">
+              {serverNotes.map((note) => (
+                <li key={note} className="flex items-start gap-3 text-sm leading-relaxed text-zinc-300">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember-500" />
+                  {note}
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
 
